@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using Game.Data;
 
 namespace Game.Mechanics
 {
@@ -16,6 +17,9 @@ namespace Game.Mechanics
         [SerializeField]
         private CanvasGroup _canvasGroup;
 
+        [SerializeField]
+        private ScriptableVector2 _rectTransformKeeper;
+
         public void OnBeginDrag(PointerEventData eventData)
         {
             _canvasGroup.blocksRaycasts = false;
@@ -24,6 +28,7 @@ namespace Game.Mechanics
         public void OnDrag(PointerEventData eventData)
         {
             _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
+
         }
 
         public void OnEndDrag(PointerEventData eventData)
@@ -33,7 +38,7 @@ namespace Game.Mechanics
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            throw new System.NotImplementedException();
+            _rectTransformKeeper.value = _rectTransform.anchoredPosition;
         }
     }
 }
