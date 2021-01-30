@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2254328248592856912}
   - component: {fileID: 8982338731733497123}
   m_Layer: 5
-  m_Name: BackgroundCard
+  m_Name: Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
