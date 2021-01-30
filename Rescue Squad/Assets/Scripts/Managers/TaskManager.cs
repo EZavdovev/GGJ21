@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-
 using System.Collections.Generic;
 using Game.Data;
+using Events;
 
 namespace Game.Managers
 {
@@ -12,31 +12,38 @@ namespace Game.Managers
         private List<RescueEventSO> _tasks;
 
         [SerializeField]
+        private RescueEventSO _currentTask;
+
+        [SerializeField]
         private GameObject _marker;
 
-        private float timeLeft;
-        private Vector2 _coordinates;
+        [SerializeField]
+        private EventListener _taskCreated;
 
-        private void Awake()
+        private void OnEnable()
         {
-            SpawnTaskMarkerOnMap(_tasks[0]);
+            _taskCreated.OnEventHappened += SpawnTaskMarkerOnMap;
         }
 
+        private void OnDisable()
+        {
+            _taskCreated.OnEventHappened -= SpawnTaskMarkerOnMap;
+        }
 
         private RescueEventSO GetRandomTask()
         {
-            var ramdomTaskItdex = Random.Range(0, _tasks.Count - 1);
+            var ramdomTaskItdex = Random.Range(0, _tasks.Count);
             var task = _tasks[ramdomTaskItdex];
 
             return task;
         }
 
-        private void SpawnTaskMarkerOnMap(RescueEventSO so)
+        private void SpawnTaskMarkerOnMap()
         {
             //x(-12;12) y(-9;9)
-            var spawn = so.coordinates;
+            _currentTask = GetRandomTask();
+            var spawn = _currentTask.coordinates;
             var spawnTask = Instantiate(_marker, spawn, Quaternion.identity);
-           
         }
     }
 }

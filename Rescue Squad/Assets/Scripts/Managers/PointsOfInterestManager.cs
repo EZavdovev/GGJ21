@@ -34,14 +34,12 @@ namespace Game.Managers
 
         private void UpdateBehaviour()
         {
-            Debug.Log("Update on: " + this.name);
+
         }
 
         private void ShowTaskInfo()
         {
-            Debug.Log("Task name: " + _currentTask.taskName);
-            Debug.Log("Difficulty: " + _currentTask.searchingRadius);
-            Debug.Log("Slots: " + _currentTask.operativesSlots);
+           
         }
     }
 }
