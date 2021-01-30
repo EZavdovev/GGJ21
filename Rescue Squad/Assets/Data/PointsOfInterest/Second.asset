@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2ed66f5c33ab9c47a14866eb6c45584, type: 3}
-  m_Name: First
+  m_Name: Second
   m_EditorClassIdentifier: 
-  taskName: First Task
+  taskName: Second Task
   logo: {fileID: 0}
   successImage: {fileID: 0}
   failImage: {fileID: 0}
@@ -24,4 +24,4 @@ MonoBehaviour:
   timeToReact: 10
   isInteractbale: 1
   isFake: 1
-  coordinates: {x: 6, y: 4}
+  coordinates: {x: -5, y: -5}
