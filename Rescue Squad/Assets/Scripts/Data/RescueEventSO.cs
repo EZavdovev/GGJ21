@@ -28,6 +28,10 @@ namespace Game.Data
         public bool isInteractbale = true;
         public bool isFake = true;
 
+        //На данный момент ограничения для координат следующие: по иксу от -12 до 12, по игреку от -9 до 9
+        [Space(10)]
+        public Vector2 coordinates = Vector2.zero;
+
     }
 }
 
