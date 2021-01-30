@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 using System.Collections.Generic;
+using Game.Data;
 
 namespace Game.Managers
 {
@@ -9,32 +9,34 @@ namespace Game.Managers
     {
 
         [SerializeField]
-        private List<ScriptableObject> _tasks;
+        private List<RescueEventSO> _tasks;
 
         [SerializeField]
         private GameObject _marker;
 
         private float timeLeft;
+        private Vector2 _coordinates;
 
         private void Awake()
         {
+            SpawnTaskMarkerOnMap(_tasks[0]);
         }
 
-        private void Update()
-        {
-            SpawnTaskMarkerOnMap();
-        }
-        private ScriptableObject GetRandomTask()
+
+        private RescueEventSO GetRandomTask()
         {
             var ramdomTaskItdex = Random.Range(0, _tasks.Count - 1);
             var task = _tasks[ramdomTaskItdex];
+
             return task;
         }
 
-        private void SpawnTaskMarkerOnMap()
+        private void SpawnTaskMarkerOnMap(RescueEventSO so)
         {
-            var spawn = new Vector2(50, 50);
-            var enemyCar = Instantiate(_marker, spawn, Quaternion.identity);
+            //x(-12;12) y(-9;9)
+            var spawn = so.coordinates;
+            var spawnTask = Instantiate(_marker, spawn, Quaternion.identity);
+           
         }
     }
 }
