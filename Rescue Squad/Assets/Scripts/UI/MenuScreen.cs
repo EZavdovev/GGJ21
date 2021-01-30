@@ -19,7 +19,7 @@ namespace UI
         }
 
         private void OnPlayButtonClick() {
-            SceneManager.LoadScene(_gameplayScene);
+                SceneManager.LoadScene(_gameplayScene);
         }
 
         private void OnExitButtonClick() {
