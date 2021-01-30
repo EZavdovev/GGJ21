@@ -1,8 +1,6 @@
 ﻿/* Вот тут нужно продумать систему по передаче сюда разных заданий. Можно создать отдельный скрипт
  * с листом всех заданий и выбирать оттуда рандомные. 
  */
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Events;
 using Game.Data;

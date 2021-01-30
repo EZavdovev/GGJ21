@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿// Вот подобная хрень должна активировать окно с описанием задания
 using UnityEngine;
 using Events;
 
