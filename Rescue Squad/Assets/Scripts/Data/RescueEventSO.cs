@@ -3,7 +3,7 @@
 namespace Game.Data
 {
 
-    [CreateAssetMenu(fileName = "New Rescue Event", menuName = "GameData/Rescue Event")]
+    [CreateAssetMenu(fileName = "New Rescue Event", menuName = "GameData/RescuePoint")]
     public class RescueEventSO : ScriptableObject
     {
 
