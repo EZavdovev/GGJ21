@@ -24,3 +24,4 @@ MonoBehaviour:
   timeToReact: 10
   isInteractbale: 1
   isFake: 1
+  coordinates: {x: 6, y: 4}
