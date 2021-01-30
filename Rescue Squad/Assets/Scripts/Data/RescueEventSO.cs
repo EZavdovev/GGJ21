@@ -16,7 +16,9 @@ namespace Game.Data
         [Space(10)]
         [TextArea(4, 8)]
         public string description = "";
+        [TextArea(4, 8)]
         public string successText = "";
+        [TextArea(4, 8)]
         public string failText = "";
 
         [Space(10)]
