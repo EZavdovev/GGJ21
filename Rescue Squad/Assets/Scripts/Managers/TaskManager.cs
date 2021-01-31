@@ -12,7 +12,7 @@ namespace Game.Managers
         private List<RescueEventSO> _tasks;
 
         [SerializeField]
-        private RescueEventSO _currentTask;
+        private ScriptableTaskValue _currentTask;
 
         [SerializeField]
         private GameObject _marker;
@@ -41,9 +41,18 @@ namespace Game.Managers
         private void SpawnTaskMarkerOnMap()
         {
             //x(-12;12) y(-9;9)
-            _currentTask = GetRandomTask();
-            var spawn = _currentTask.coordinates;
-            var spawnTask = Instantiate(_marker, spawn, Quaternion.identity);
+            if(_tasks.Count != 0)
+            {
+                _currentTask.value = GetRandomTask();
+                var spawn = _currentTask.value.coordinates;
+                var spawnTask = Instantiate(_marker, spawn, Quaternion.identity);
+                _tasks.Remove(_currentTask.value);
+            }
+            else 
+            { 
+                Debug.Log("No tasks"); 
+            }
+            
         }
     }
 }
