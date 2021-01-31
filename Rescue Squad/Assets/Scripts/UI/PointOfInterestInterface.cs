@@ -15,15 +15,25 @@ namespace Game.UI
         private ScriptableGameObjectValue _eventScreen;
 
         [SerializeField]
+        private RescueEventSO _thisTask;
+
+        [SerializeField]
         private Text _description;
 
         [SerializeField]
         private Image _taskImage;
 
 
+        private void OnEnable()
+        {
+            _thisTask = _task.value;
+        }
+
+
         private void OnMouseDown()
         {
             EnableScreen();
+            _task.value = _thisTask;
             InitializeEventScreen();
         }
 
