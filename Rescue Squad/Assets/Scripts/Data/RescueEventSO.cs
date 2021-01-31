@@ -9,9 +9,9 @@ namespace Game.Data
 
         public string taskName = "";
 
-        public Texture2D logo;
-        public Texture2D successImage;
-        public Texture2D failImage;
+        public Sprite logo;
+        public Sprite successImage;
+        public Sprite failImage;
 
         [Space(10)]
         [TextArea(4, 8)]
