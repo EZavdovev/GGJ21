@@ -47,14 +47,14 @@ namespace Game.UI
         {
             _thisTask = _task.value;
             _updateEventListener.OnEventHappened += CounterMethod;
-            _updateEventListener.OnEventHappened += StartThicking;
+            //_updateEventListener.OnEventHappened += StartThicking;
             _startTaskEventListener.OnEventHappened += StartThicking;
         }
 
         private void OnDisable()
         {
             _updateEventListener.OnEventHappened -= CounterMethod;
-            _updateEventListener.OnEventHappened -= StartThicking;
+           // _updateEventListener.OnEventHappened -= StartThicking;
             _startTaskEventListener.OnEventHappened -= StartThicking;
         }
 
