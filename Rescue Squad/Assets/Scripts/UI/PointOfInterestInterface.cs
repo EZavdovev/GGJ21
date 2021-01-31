@@ -12,7 +12,7 @@ namespace Game.UI
         private ScriptableTaskValue _task;
 
         [SerializeField]
-        private GameObject _eventScreen;
+        private ScriptableGameObjectValue _eventScreen;
 
         [SerializeField]
         private Text _description;
@@ -29,21 +29,15 @@ namespace Game.UI
 
         private void EnableScreen()
         {
-            Debug.Log("Enabling");
-            _eventScreen.SetActive(true);
-            Debug.Log("Enabled");
+            _eventScreen.value.SetActive(true);
         }
 
         private void InitializeEventScreen()
         {
-            if(_eventScreen.activeInHierarchy == true)
-            {
-                _description = _eventScreen.transform.GetChild(1).GetComponent<Text>();
-                _taskImage = _eventScreen.transform.GetChild(2).GetComponent<Image>();
-                _description.text = _task.value.description;
-                _taskImage.sprite = _task.value.logo;
-
-            }
+            _description = _eventScreen.value.transform.GetChild(1).GetComponent<Text>();
+            _taskImage = _eventScreen.value.transform.GetChild(2).GetComponent<Image>();
+            _description.text = _task.value.description;
+            _taskImage.sprite = _task.value.logo;
         }
     }
 }
