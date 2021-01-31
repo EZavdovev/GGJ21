@@ -16,7 +16,10 @@ namespace Game.Mechanics
         private EventDispatcher _taskEventDispatcher;
 
         [SerializeField]
-        private float _maxSeconds = 4f;
+        private float _maxSeconds = 16f;
+
+        [SerializeField]
+        private float _minSeconds = 5f;
 
         [SerializeField]
         private float _duration = 0f;
@@ -34,9 +37,14 @@ namespace Game.Mechanics
             _updateListener.OnEventHappened -= Checker;
         }
 
+        private void Start()
+        {
+            _duration = RandomizeTimer();
+        }
+
         private float RandomizeTimer()
         {
-            var rand = Random.Range(0f, _maxSeconds);
+            var rand = Random.Range(_minSeconds, _maxSeconds);
             return rand;
         }
 
