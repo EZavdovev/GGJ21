@@ -34,6 +34,9 @@ namespace Game.UI
         private EventListener _updateEventListener;
 
         [SerializeField]
+        private EventListener _startTaskEventListener;
+
+        [SerializeField]
         private bool _mustCount = true;
 
         [SerializeField]
@@ -45,12 +48,14 @@ namespace Game.UI
             _thisTask = _task.value;
             _updateEventListener.OnEventHappened += CounterMethod;
             _updateEventListener.OnEventHappened += StartThicking;
+            _startTaskEventListener.OnEventHappened += StartThicking;
         }
 
         private void OnDisable()
         {
             _updateEventListener.OnEventHappened -= CounterMethod;
             _updateEventListener.OnEventHappened -= StartThicking;
+            _startTaskEventListener.OnEventHappened -= StartThicking;
         }
 
 
@@ -76,6 +81,8 @@ namespace Game.UI
 
         private void StartThicking()
         {
+            Debug.Log("Task Started");
+            _mustCount = false;
             if(_mustCount == false)
             {
                 transform.localScale -= _scaleChanger;
