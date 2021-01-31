@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using Game.Data;
 
 namespace Game.UI
 {
@@ -7,6 +7,33 @@ namespace Game.UI
     public class EventScreen : MonoBehaviour
     {
 
+        [SerializeField]
+        private ScriptableTaskValue _task;
+
+        [SerializeField]
+        private GameObject _cardsMenu;
+
+        [SerializeField]
+        private GameObject _cardPrefab;
+
+        private void OnEnable()
+        {
+            SpawnCards();
+            Time.timeScale = 0f;
+        }
+
+        private void OnDisable()
+        {
+            Time.timeScale = 1f;
+        }
+
+        private void SpawnCards()
+        {
+            for (int i = 0; i < _task.value.operativesSlots; i++)
+            {
+                Instantiate(_cardPrefab, _cardsMenu.transform);
+            }
+        }
 
         public void ClosePanel()
         {
