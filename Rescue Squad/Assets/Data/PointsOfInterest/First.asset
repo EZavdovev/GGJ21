@@ -16,7 +16,7 @@ MonoBehaviour:
   logo: {fileID: 0}
   successImage: {fileID: 0}
   failImage: {fileID: 0}
-  description: This is temporary
+  description: First Task
   successText: 
   failText: 
   searchingRadius: 10
