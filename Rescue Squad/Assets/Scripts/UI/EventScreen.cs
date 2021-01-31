@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Game.Data;
+using Events;
 
 namespace Game.UI
 {
@@ -9,6 +10,9 @@ namespace Game.UI
 
         [SerializeField]
         private ScriptableTaskValue _task;
+
+        [SerializeField]
+        private EventDispatcher _startTaskDispatcher;
 
         [SerializeField]
         private GameObject _cardsMenu;
@@ -43,6 +47,7 @@ namespace Game.UI
         public void SendBoyz()
         {
             Debug.Log("Boyz are sent");
+            _startTaskDispatcher.Dispatch();
             gameObject.SetActive(false);
         }
     }
