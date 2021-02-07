@@ -40,6 +40,9 @@ namespace Game.UI
         private bool _mustCount = true;
 
         [SerializeField]
+        private bool _canThick = false;
+
+        [SerializeField]
         private Vector3 _scaleChanger = Vector3.zero;
 
 
@@ -47,15 +50,25 @@ namespace Game.UI
         {
             _thisTask = _task.value;
             _updateEventListener.OnEventHappened += CounterMethod;
+<<<<<<< Updated upstream
             //_updateEventListener.OnEventHappened += StartThicking;
             _startTaskEventListener.OnEventHappened += StartThicking;
+=======
+            _updateEventListener.OnEventHappened += StartThicking;
+            _startTaskEventListener.OnEventHappened += CanThick;
+>>>>>>> Stashed changes
         }
 
         private void OnDisable()
         {
             _updateEventListener.OnEventHappened -= CounterMethod;
+<<<<<<< Updated upstream
            // _updateEventListener.OnEventHappened -= StartThicking;
             _startTaskEventListener.OnEventHappened -= StartThicking;
+=======
+            _updateEventListener.OnEventHappened -= StartThicking;
+            _startTaskEventListener.OnEventHappened -= CanThick;
+>>>>>>> Stashed changes
         }
 
 
@@ -79,20 +92,26 @@ namespace Game.UI
             _taskImage.sprite = _task.value.logo;
         }
 
+        private void CanThick()
+        {
+            _canThick = true;
+        }
+
         private void StartThicking()
         {
-            Debug.Log("Task Started");
-            _mustCount = false;
-            if(_mustCount == false)
+            if(_canThick == true)
             {
-                transform.localScale -= _scaleChanger;
-            }
-            if(transform.localScale.x <= 5f)
-            {
-                transform.localScale = new Vector3(5f, 5f, 0f);
-                Debug.Log("Make a report");
-                Destroy(gameObject);
-                
+                _mustCount = false;
+                if (_mustCount == false)
+                {
+                    transform.localScale -= _scaleChanger;
+                }
+                if (transform.localScale.x <= 5f)
+                {
+                    transform.localScale = new Vector3(5f, 5f, 0f);
+                    Debug.Log("Make a report");
+                    Destroy(gameObject);
+                }
             }
         }
 

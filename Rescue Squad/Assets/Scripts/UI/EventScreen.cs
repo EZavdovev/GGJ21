@@ -22,20 +22,29 @@ namespace Game.UI
 
         private void OnEnable()
         {
-            SpawnCards();
+            SpawnCardsSlots();
             Time.timeScale = 0f;
         }
 
         private void OnDisable()
         {
+            DeletCardsSlots();
             Time.timeScale = 1f;
         }
 
-        private void SpawnCards()
+        private void SpawnCardsSlots()
         {
             for (int i = 0; i < _task.value.operativesSlots; i++)
             {
                 Instantiate(_cardPrefab, _cardsMenu.transform);
+            }
+        }
+
+        private void DeletCardsSlots()
+        {
+            for (int i = 0; i < _task.value.operativesSlots; i++)
+            {
+                Destroy(_cardsMenu.transform.GetChild(i).gameObject);
             }
         }
 
