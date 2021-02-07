@@ -50,25 +50,15 @@ namespace Game.UI
         {
             _thisTask = _task.value;
             _updateEventListener.OnEventHappened += CounterMethod;
-<<<<<<< Updated upstream
-            //_updateEventListener.OnEventHappened += StartThicking;
-            _startTaskEventListener.OnEventHappened += StartThicking;
-=======
             _updateEventListener.OnEventHappened += StartThicking;
             _startTaskEventListener.OnEventHappened += CanThick;
->>>>>>> Stashed changes
         }
 
         private void OnDisable()
         {
             _updateEventListener.OnEventHappened -= CounterMethod;
-<<<<<<< Updated upstream
-           // _updateEventListener.OnEventHappened -= StartThicking;
-            _startTaskEventListener.OnEventHappened -= StartThicking;
-=======
             _updateEventListener.OnEventHappened -= StartThicking;
             _startTaskEventListener.OnEventHappened -= CanThick;
->>>>>>> Stashed changes
         }
 
 
