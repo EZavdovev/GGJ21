@@ -7,6 +7,5 @@ public class Card : MonoBehaviour
 
     public void SetCard()
     {
-        Debug.Log("card pressed");
     }
 }
