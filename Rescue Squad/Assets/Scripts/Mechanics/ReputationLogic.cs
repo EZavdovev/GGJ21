@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Events;
+
 namespace Game.Mechanics 
 {
+
     public class ReputationLogic : MonoBehaviour {
+
         [SerializeField]
         private EventListener _SuccessEventListener;
         [SerializeField]
@@ -15,20 +18,21 @@ namespace Game.Mechanics
         private ScriptableFloatValue _reputation;
 
 
-        private const int _changerScore = 10;
-        private const int _failedScore = 20;
+        private const int CHANGER_SCORE = 10;
+        private const int FAILED_SCORE = 20;
+
         private void Awake() {
             _SuccessEventListener.OnEventHappened += Success;
             _failedEventListener.OnEventHappened += Failed;
         }
 
         private void Success() {
-            _reputation.value += _changerScore;
+            _reputation.value += CHANGER_SCORE;
         }
 
         private void Failed() {
-            _reputation.value -= _changerScore;
-            if(_reputation.value <= _failedScore) {
+            _reputation.value -= CHANGER_SCORE;
+            if(_reputation.value <= FAILED_SCORE) {
                 _endGameDispatcher.Dispatch();
             }
         }
