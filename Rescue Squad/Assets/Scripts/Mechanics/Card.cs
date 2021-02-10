@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Game.Data;
 
 public class Card : MonoBehaviour
 {
 
-    public void SetCard()
+    [SerializeField]
+    private OperativeSO _thisOperative;
+
+    public OperativeSO ThisOperative
     {
+        get { return _thisOperative; }
     }
+
 }
