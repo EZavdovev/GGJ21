@@ -18,7 +18,7 @@ namespace Game.UI
         private GameObject _cardsMenu;
 
         [SerializeField]
-        private GameObject _cardPrefab;
+        private GameObject _slotPrefab;
 
         private void OnEnable()
         {
@@ -36,7 +36,7 @@ namespace Game.UI
         {
             for (int i = 0; i < _task.value.operativesSlots; i++)
             {
-                Instantiate(_cardPrefab, _cardsMenu.transform);
+                Instantiate(_slotPrefab, _cardsMenu.transform);
             }
         }
 
