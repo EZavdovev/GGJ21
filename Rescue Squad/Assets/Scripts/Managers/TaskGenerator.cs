@@ -5,7 +5,7 @@ using Events;
 
 namespace Game.Managers
 {
-    public class TaskManager : MonoBehaviour
+    public class TaskGenerator : MonoBehaviour
     {
 
         [SerializeField]
@@ -52,7 +52,6 @@ namespace Game.Managers
             { 
                 Debug.Log("No tasks"); 
             }
-            
         }
     }
 }
