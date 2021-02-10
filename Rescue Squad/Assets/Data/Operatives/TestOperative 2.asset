@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8e2cce512ba28c4f8def1f072859853, type: 3}
-  m_Name: TestOperative
+  m_Name: TestOperative 2
   m_EditorClassIdentifier: 
   photo: {fileID: 0}
-  operativeName: Test Operative
+  operativeName: Test Operative 2
   rank: 27
   expirience: 54
