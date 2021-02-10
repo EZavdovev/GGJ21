@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c18c4850dc5f284e9293152f655b0e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _setCardDispatcher: {fileID: 11400000, guid: 8cd6860633cd9df428d183af8e698138, type: 2}
   _itemBeingDragged: {fileID: 11400000, guid: 6020fe5932b37644c84ffeac88916d62, type: 2}
 --- !u!222 &2043483754954110210
 CanvasRenderer:
