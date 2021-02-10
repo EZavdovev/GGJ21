@@ -128,6 +128,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1512969317}
     m_Modifications:
+    - target: {fileID: -5593875926863093410, guid: 398d55521213f4443bb666aa70c1dc7c,
+        type: 3}
+      propertyPath: _thisOperative
+      value: 
+      objectReference: {fileID: 11400000, guid: 75cfdff4453e2d042b2d093f4b876c3f,
+        type: 2}
     - target: {fileID: 2254328248592856914, guid: 398d55521213f4443bb666aa70c1dc7c,
         type: 3}
       propertyPath: m_Name
@@ -534,6 +540,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 241103730}
     m_Modifications:
+    - target: {fileID: -5593875926863093410, guid: 398d55521213f4443bb666aa70c1dc7c,
+        type: 3}
+      propertyPath: _thisOperative
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ca94a12ff62f54294588b6fcf70449,
+        type: 2}
     - target: {fileID: 2254328248592856914, guid: 398d55521213f4443bb666aa70c1dc7c,
         type: 3}
       propertyPath: m_Name
@@ -764,6 +776,9 @@ GameObject:
   - component: {fileID: 961901288}
   - component: {fileID: 961901289}
   - component: {fileID: 961901287}
+  - component: {fileID: 961901290}
+  - component: {fileID: 961901292}
+  - component: {fileID: 961901291}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -885,8 +900,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _updateListener: {fileID: 961901288}
   _taskEventDispatcher: {fileID: 961901286}
-  _maxSeconds: 16
-  _minSeconds: 5
+  _maxSeconds: 2
+  _minSeconds: 1
   _duration: 0
   _canDispatch: 0
 --- !u!114 &961901288
@@ -915,6 +930,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _someEvent: {fileID: 11400000, guid: 40db88f04dadae546a2af84b636e7360, type: 2}
+--- !u!114 &961901290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961901279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad642356f87d0a74da8a498ef57d3053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _someEvent: {fileID: 11400000, guid: ef2bc579bef7dd54cbc2a2762ba984fe, type: 2}
+--- !u!114 &961901291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961901279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf9540aab820214caee057f3b95790d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _someEvent: {fileID: 11400000, guid: ef2bc579bef7dd54cbc2a2762ba984fe, type: 2}
+--- !u!114 &961901292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961901279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c823621cb2445b46993461501d471e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _setCardEventListener: {fileID: 961901291}
+  _operativesToTask: []
+  _currentTask: {fileID: 11400000, guid: 44d44f32080d456429e92f91ba09a12b, type: 2}
+  _cardsPanel: {fileID: 1174548298}
 --- !u!1 &1090248950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,6 +1431,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1152336693}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &1174548298 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4096906202081062895, guid: a5a0c6ac7fba1e349ac018972cad7ac7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1152336693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1264334630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1381,6 +1444,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1932226428}
     m_Modifications:
+    - target: {fileID: -5593875926863093410, guid: 398d55521213f4443bb666aa70c1dc7c,
+        type: 3}
+      propertyPath: _thisOperative
+      value: 
+      objectReference: {fileID: 11400000, guid: ef90da7208ec6b24297f13f6c0ebc2c4,
+        type: 2}
     - target: {fileID: 2254328248592856914, guid: 398d55521213f4443bb666aa70c1dc7c,
         type: 3}
       propertyPath: m_Name
@@ -1500,6 +1569,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2050681316}
     m_Modifications:
+    - target: {fileID: -5593875926863093410, guid: 398d55521213f4443bb666aa70c1dc7c,
+        type: 3}
+      propertyPath: _thisOperative
+      value: 
+      objectReference: {fileID: 11400000, guid: 05bd9d8239901ef49a1b9f76c4680f57,
+        type: 2}
     - target: {fileID: 2254328248592856914, guid: 398d55521213f4443bb666aa70c1dc7c,
         type: 3}
       propertyPath: m_Name
