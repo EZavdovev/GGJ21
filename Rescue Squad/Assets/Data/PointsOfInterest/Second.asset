@@ -19,9 +19,10 @@ MonoBehaviour:
   description: Second task
   successText: 
   failText: 
-  searchingRadius: 10
+  searchingRadius: 40
   operativesSlots: 4
   timeToReact: 10
+  _operatives: []
   isInteractbale: 1
   isFake: 1
   coordinates: {x: -5, y: -5}
