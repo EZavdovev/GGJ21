@@ -47,6 +47,7 @@ namespace Game.Managers
                         {
                             Debug.Log(cardComp.ThisOperative.operativeName);
                             _operativesToTask.Add(cardComp.ThisOperative);
+                            _currentTask.value._operatives.Add(cardComp.ThisOperative);
                         }
                     }
                 }
