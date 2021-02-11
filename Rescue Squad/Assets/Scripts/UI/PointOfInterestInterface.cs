@@ -94,12 +94,13 @@ namespace Game.UI
                 _mustCount = false;
                 if (_mustCount == false)
                 {
-                    transform.localScale -= _scaleChanger;
+                    transform.localScale -= _scaleChanger * _thisTask.SpeedModifier();
                 }
                 if (transform.localScale.x <= 5f)
                 {
                     transform.localScale = new Vector3(5f, 5f, 0f);
                     Debug.Log("Make a report");
+                    _thisTask.ClearSO();
                     Destroy(gameObject);
                 }
             }
