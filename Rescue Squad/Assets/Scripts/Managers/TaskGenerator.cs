@@ -46,6 +46,7 @@ namespace Game.Managers
                 _currentTask.value = GetRandomTask();
                 var spawn = _currentTask.value.coordinates;
                 var spawnTask = Instantiate(_marker, spawn, Quaternion.identity);
+                spawnTask.transform.localScale = new Vector3(_currentTask.value.searchingRadius, _currentTask.value.searchingRadius, 0f);
                 _tasks.Remove(_currentTask.value);
             }
             else 
