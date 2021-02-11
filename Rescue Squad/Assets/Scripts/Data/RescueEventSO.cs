@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Game.Data
 {
@@ -27,6 +28,9 @@ namespace Game.Data
         public int timeToReact = 10;
 
         [Space(10)]
+        public List<OperativeSO> _operatives;
+
+        [Space(10)]
         public bool isInteractbale = true;
         public bool isFake = true;
 
@@ -34,6 +38,23 @@ namespace Game.Data
         [Space(10)]
         public Vector2 coordinates = Vector2.zero;
 
+        public void ClearSO()
+        {
+            _operatives.Clear();
+        }
+
+        public float SpeedModifier()
+        {
+            var sum = 0f;
+            var result = 0f;
+            var modifier = 50f;
+            for (int i = 0; i < _operatives.Count; i++)
+            {
+                sum += _operatives[i].expirience;
+            }
+            result = sum / modifier;
+            return result;
+        }
     }
 }
 
