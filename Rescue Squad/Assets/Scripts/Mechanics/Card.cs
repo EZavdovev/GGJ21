@@ -12,6 +12,7 @@ public class Card : MonoBehaviour
     public OperativeSO ThisOperative
     {
         get { return _thisOperative; }
+        set { _thisOperative = value; }
     }
 
 }
