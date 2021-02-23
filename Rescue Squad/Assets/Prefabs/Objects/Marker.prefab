@@ -195,6 +195,8 @@ MonoBehaviour:
   _timeToReact: 10
   _task: {fileID: 11400000, guid: 44d44f32080d456429e92f91ba09a12b, type: 2}
   _eventScreen: {fileID: 11400000, guid: 184f1e0a212e82a4cb1121e6ab4ef667, type: 2}
+  _cardsStack: {fileID: 11400000, guid: 06c9d2437b581204f844b02f515b79b5, type: 2}
+  _taskPanel: {fileID: 0}
   _thisTask: {fileID: 0}
   _description: {fileID: 0}
   _taskImage: {fileID: 0}
@@ -203,6 +205,10 @@ MonoBehaviour:
   _startTaskEventListener: {fileID: 3557611141476574812}
   _mustCount: 1
   _canThick: 0
+  _cardPrefab: {fileID: 2254328248592856914, guid: 398d55521213f4443bb666aa70c1dc7c,
+    type: 3}
+  _slotPrefab: {fileID: 6200066400114838810, guid: b67beb2301d16f6479619802f15c720a,
+    type: 3}
   _scaleChanger: {x: 0.01, y: 0.01, z: 0}
 --- !u!114 &448342531209968562
 MonoBehaviour:
