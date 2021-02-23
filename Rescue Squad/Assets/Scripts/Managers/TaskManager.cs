@@ -13,9 +13,6 @@ namespace Game.Managers
         private EventListener _setCardEventListener;
 
         [SerializeField]
-        private List<OperativeSO> _operativesToTask;
-
-        [SerializeField]
         private ScriptableTaskValue _currentTask;
 
         [SerializeField]
@@ -39,12 +36,12 @@ namespace Game.Managers
                 if (slot.transform.childCount > 0)
                 {
                     var card = slot.transform.GetChild(0);
+                    Debug.Log(card.GetComponent<Card>().ThisOperative.name);
                     if (card != null)
                     {
                         card.TryGetComponent<Card>(out var cardComp);
-                        if (_operativesToTask.Contains(cardComp.ThisOperative) == false)
+                        if (_currentTask.value._operatives.Contains(cardComp.ThisOperative) == false)
                         {
-                            _operativesToTask.Add(cardComp.ThisOperative);
                             _currentTask.value._operatives.Add(cardComp.ThisOperative);
                         }
                     }
