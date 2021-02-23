@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using Game.Data;
+using Events;
 
 
 namespace Game.UI
@@ -33,7 +33,10 @@ namespace Game.UI
             if (!Item)
             {
                 _itemBeingDragged.value.transform.SetParent(transform);
-                _setCardDispatcher.value.Dispatch();
+                if(_setCardDispatcher.value != null)
+                {
+                    _setCardDispatcher.value.Dispatch();
+                }
             }
         }
     }
