@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TestOperative 1
   m_EditorClassIdentifier: 
   photo: {fileID: 0}
-  operativeName: Test Operative 1
+  operativeName: "\u0417\u0443\u0431\u0435\u043D\u043A\u043E"
   rank: 27
   expirience: 54
