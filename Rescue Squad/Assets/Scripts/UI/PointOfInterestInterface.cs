@@ -19,6 +19,9 @@ namespace Game.UI
         private ScriptableGameObjectValue _eventScreen;
 
         [SerializeField]
+        private ScriptableGameObjectValue _cardsStack;
+
+        [SerializeField]
         private Transform _taskPanel;
 
         [SerializeField]
@@ -44,6 +47,12 @@ namespace Game.UI
 
         [SerializeField]
         private bool _canThick = false;
+
+        [SerializeField]
+        private GameObject _cardPrefab;
+
+        [SerializeField]
+        private GameObject _slotPrefab;
 
         [SerializeField]
         private Vector3 _scaleChanger = Vector3.zero;
@@ -108,9 +117,21 @@ namespace Game.UI
                 {
                     transform.localScale = new Vector3(5f, 5f, 0f);
                     Debug.Log("Make a report");
+                    ReturnCards();
                     _thisTask.ClearSO();
                     Destroy(gameObject);
                 }
+            }
+        }
+
+        private void ReturnCards()
+        {
+            for (int i = 0; i < _thisTask._operatives.Count; i++)
+            {
+                var slot = Instantiate(_slotPrefab, _cardsStack.value.transform);
+                var card = Instantiate(_cardPrefab, slot.transform);
+                card.GetComponent<Card>().ThisOperative = _thisTask._operatives[i];
+                Debug.Log(i);
             }
         }
 
