@@ -47,7 +47,7 @@ namespace Game.Data
         {
             var sum = 0f;
             var result = 0f;
-            var modifier = 50f;
+            var modifier = 30f;
             for (int i = 0; i < _operatives.Count; i++)
             {
                 sum += _operatives[i].expirience;
