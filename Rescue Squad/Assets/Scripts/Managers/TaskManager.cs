@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using Events;
 using Game.Data;
-using Events;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Game.Managers
 {
@@ -32,12 +32,11 @@ namespace Game.Managers
             _setCardEventListener.OnEventHappened -= LoadCards;
         }
 
-
         private void LoadCards()
         {
-            foreach(Transform slot in _cardsPanel)
+            foreach (Transform slot in _cardsPanel)
             {
-                if(slot.transform.childCount > 0)
+                if (slot.transform.childCount > 0)
                 {
                     var card = slot.transform.GetChild(0);
                     if (card != null)
@@ -45,7 +44,6 @@ namespace Game.Managers
                         card.TryGetComponent<Card>(out var cardComp);
                         if (_operativesToTask.Contains(cardComp.ThisOperative) == false)
                         {
-                            Debug.Log(cardComp.ThisOperative.operativeName);
                             _operativesToTask.Add(cardComp.ThisOperative);
                             _currentTask.value._operatives.Add(cardComp.ThisOperative);
                         }
