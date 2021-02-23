@@ -535,12 +535,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7867873398463042856}
     m_Modifications:
+    - target: {fileID: -6996442415299200247, guid: 398d55521213f4443bb666aa70c1dc7c,
+        type: 3}
+      propertyPath: _startParent
+      value: 
+      objectReference: {fileID: 7867873398463042856}
     - target: {fileID: -5593875926863093410, guid: 398d55521213f4443bb666aa70c1dc7c,
         type: 3}
       propertyPath: _thisOperative
       value: 
       objectReference: {fileID: 11400000, guid: 05bd9d8239901ef49a1b9f76c4680f57,
         type: 2}
+    - target: {fileID: 23884150447166481, guid: 398d55521213f4443bb666aa70c1dc7c,
+        type: 3}
+      propertyPath: m_Text
+      value: "\u041F\u0435\u043D\u0430"
+      objectReference: {fileID: 0}
     - target: {fileID: 2254328248592856914, guid: 398d55521213f4443bb666aa70c1dc7c,
         type: 3}
       propertyPath: m_Name
@@ -800,6 +810,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1054988251312520972}
     m_Modifications:
+    - target: {fileID: -6996442415299200247, guid: 398d55521213f4443bb666aa70c1dc7c,
+        type: 3}
+      propertyPath: _startParent
+      value: 
+      objectReference: {fileID: 1054988251312520972}
     - target: {fileID: -5593875926863093410, guid: 398d55521213f4443bb666aa70c1dc7c,
         type: 3}
       propertyPath: _thisOperative
@@ -925,12 +940,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7867873400277340090}
     m_Modifications:
+    - target: {fileID: -6996442415299200247, guid: 398d55521213f4443bb666aa70c1dc7c,
+        type: 3}
+      propertyPath: _startParent
+      value: 
+      objectReference: {fileID: 7867873400277340090}
     - target: {fileID: -5593875926863093410, guid: 398d55521213f4443bb666aa70c1dc7c,
         type: 3}
       propertyPath: _thisOperative
       value: 
       objectReference: {fileID: 11400000, guid: b3ca94a12ff62f54294588b6fcf70449,
         type: 2}
+    - target: {fileID: 23884150447166481, guid: 398d55521213f4443bb666aa70c1dc7c,
+        type: 3}
+      propertyPath: m_Text
+      value: "\u0416\u043C\u044B\u0448\u0435\u043D\u043A\u043E"
+      objectReference: {fileID: 0}
     - target: {fileID: 2254328248592856914, guid: 398d55521213f4443bb666aa70c1dc7c,
         type: 3}
       propertyPath: m_Name
@@ -1050,12 +1075,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7867873399001213103}
     m_Modifications:
+    - target: {fileID: -6996442415299200247, guid: 398d55521213f4443bb666aa70c1dc7c,
+        type: 3}
+      propertyPath: _startParent
+      value: 
+      objectReference: {fileID: 7867873399001213103}
     - target: {fileID: -5593875926863093410, guid: 398d55521213f4443bb666aa70c1dc7c,
         type: 3}
       propertyPath: _thisOperative
       value: 
       objectReference: {fileID: 11400000, guid: 75cfdff4453e2d042b2d093f4b876c3f,
         type: 2}
+    - target: {fileID: 23884150447166481, guid: 398d55521213f4443bb666aa70c1dc7c,
+        type: 3}
+      propertyPath: m_Text
+      value: "\u0425\u0440\u044F\u043A"
+      objectReference: {fileID: 0}
     - target: {fileID: 2254328248592856914, guid: 398d55521213f4443bb666aa70c1dc7c,
         type: 3}
       propertyPath: m_Name
