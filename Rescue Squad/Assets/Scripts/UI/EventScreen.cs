@@ -15,7 +15,7 @@ namespace Game.UI
         private EventDispatcher _startTaskDispatcher;
 
         [SerializeField]
-        private GameObject _cardsMenu;
+        private Transform _cardsMenu;
 
         [SerializeField]
         private GameObject _slotPrefab;
@@ -28,8 +28,8 @@ namespace Game.UI
 
         private void OnDisable()
         {
-            DeletCardsSlots();
             Time.timeScale = 1f;
+            DeleteCardsSlots();
         }
 
         private void SpawnCardsSlots()
@@ -40,11 +40,11 @@ namespace Game.UI
             }
         }
 
-        private void DeletCardsSlots()
+        private void DeleteCardsSlots()
         {
-            for (int i = 0; i < _task.value.operativesSlots; i++)
+            foreach (Transform slot in _cardsMenu)
             {
-                Destroy(_cardsMenu.transform.GetChild(i).gameObject);
+                Destroy(slot.gameObject);
             }
         }
 
@@ -55,7 +55,6 @@ namespace Game.UI
 
         public void SendBoyz()
         {
-            Debug.Log("Boyz are sent");
             _startTaskDispatcher.Dispatch();
             gameObject.SetActive(false);
         }
