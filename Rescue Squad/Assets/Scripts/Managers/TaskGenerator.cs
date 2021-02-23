@@ -51,7 +51,6 @@ namespace Game.Managers
             }
             else 
             { 
-                Debug.Log("No tasks"); 
             }
         }
     }
