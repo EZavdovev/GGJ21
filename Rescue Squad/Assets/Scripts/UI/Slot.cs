@@ -16,6 +16,9 @@ namespace Game.UI
         [SerializeField]
         private ScriptableGameObjectValue _itemBeingDragged;
 
+        [SerializeField]
+        private bool _isBusy = false;
+
         public GameObject Item
         {
             get
@@ -33,10 +36,16 @@ namespace Game.UI
             if (!Item)
             {
                 _itemBeingDragged.value.transform.SetParent(transform);
+                Debug.Log("Card set");
+                _isBusy = true;
                 if(_setCardDispatcher.value != null)
                 {
                     _setCardDispatcher.value.Dispatch();
                 }
+            }
+            else
+            {
+                _isBusy = false;
             }
         }
     }
