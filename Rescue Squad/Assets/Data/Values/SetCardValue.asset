@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a55c8c07965bbe4f85ce98bed374a18, type: 3}
   m_Name: SetCardValue
   m_EditorClassIdentifier: 
-  value: {fileID: 0}
+  value: {fileID: 5325480494772420685, guid: fa779aac0291fa34bbb7d0a2a728e01f, type: 3}
