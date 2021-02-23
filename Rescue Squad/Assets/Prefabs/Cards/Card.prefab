@@ -123,18 +123,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2254328248592856912}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -5593875926863093410}
-        m_MethodName: SetCard
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &-5593875926863093410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9394b146729c346b07bd7576274ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _thisOperative: {fileID: 0}
 --- !u!225 &3547268183548376003
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -173,6 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectToDrag: {fileID: 11400000, guid: 6020fe5932b37644c84ffeac88916d62, type: 2}
   _canvasGroup: {fileID: 3547268183548376003}
+  _startParent: {fileID: 0}
 --- !u!1 &3973326752499442741
 GameObject:
   m_ObjectHideFlags: 0
