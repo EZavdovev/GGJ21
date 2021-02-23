@@ -20,7 +20,7 @@ MonoBehaviour:
   successText: 
   failText: 
   searchingRadius: 15
-  operativesSlots: 2
+  operativesSlots: 3
   timeToReact: 10
   _operatives: []
   isInteractbale: 1
