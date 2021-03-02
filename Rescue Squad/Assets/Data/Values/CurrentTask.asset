@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611d09beb333f2c4793ce404f0ff41b1, type: 3}
   m_Name: CurrentTask
   m_EditorClassIdentifier: 
-  value: {fileID: 0}
+  value: {fileID: 11400000, guid: 70d50e434ed581145866be4ade85d0c1, type: 2}
