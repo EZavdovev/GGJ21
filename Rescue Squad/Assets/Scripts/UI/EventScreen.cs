@@ -64,17 +64,6 @@ namespace Game.UI
             }
         }
 
-        private void ReturnCards()
-        {
-            for (int i = 0; i < _task.value._operatives.Count; i++)
-            {
-                var slot = Instantiate(_slotPrefab, _cardsStack);
-                var card = Instantiate(_cardPrefab, slot.transform);
-                card.GetComponent<Card>().ThisOperative = _task.value._operatives[i];
-                Debug.Log(i);
-            }
-        }
-
         private void DeleteCardsSlots()
         {
             foreach (Transform slot in _cardsMenu)
