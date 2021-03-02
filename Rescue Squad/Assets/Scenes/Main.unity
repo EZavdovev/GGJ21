@@ -601,7 +601,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: EventsScreen
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5639439295360638275, guid: a5a0c6ac7fba1e349ac018972cad7ac7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a5a0c6ac7fba1e349ac018972cad7ac7, type: 3}
 --- !u!224 &1152336694 stripped
 RectTransform:
@@ -1079,9 +1080,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1378404125680586790, guid: ee9c9f1887191a741b26544a3ca8e87b,
         type: 3}
-      propertyPath: _operativesToTask.Array.size
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: _cardsStack
+      value: 
+      objectReference: {fileID: 1327598464}
     - target: {fileID: 1378404125680586790, guid: ee9c9f1887191a741b26544a3ca8e87b,
         type: 3}
       propertyPath: _cardsPanel
