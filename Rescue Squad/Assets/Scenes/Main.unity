@@ -486,6 +486,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 922053893}
     m_Modifications:
+    - target: {fileID: 6579793265617751055, guid: a5a0c6ac7fba1e349ac018972cad7ac7,
+        type: 3}
+      propertyPath: _cardsStack
+      value: 
+      objectReference: {fileID: 1327598464}
     - target: {fileID: 7760031311111718982, guid: a5a0c6ac7fba1e349ac018972cad7ac7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -609,6 +614,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4096906202081062895, guid: a5a0c6ac7fba1e349ac018972cad7ac7,
     type: 3}
   m_PrefabInstance: {fileID: 1152336693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1327598464 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2159642605688751269, guid: 54dc0f5f1c5f72541883c53c14d097df,
+    type: 3}
+  m_PrefabInstance: {fileID: 1932226425}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1932226425
 PrefabInstance:
