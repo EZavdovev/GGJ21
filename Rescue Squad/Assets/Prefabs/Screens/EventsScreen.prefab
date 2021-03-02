@@ -590,10 +590,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _task: {fileID: 11400000, guid: 44d44f32080d456429e92f91ba09a12b, type: 2}
+  _startTaskEventValue: {fileID: 11400000, guid: 6164ddde4c404ec47953326063d682b0,
+    type: 2}
   _startTaskDispatcher: {fileID: 1077640377}
   _cardsMenu: {fileID: 4096906202081062895}
+  _cardsStack: {fileID: 0}
   _slotPrefab: {fileID: 6200066400114838810, guid: b67beb2301d16f6479619802f15c720a,
     type: 3}
+  _cardPrefab: {fileID: 2254328248592856914, guid: 398d55521213f4443bb666aa70c1dc7c,
+    type: 3}
+  _description: {fileID: 7760031310245496309}
+  _taskImage: {fileID: 7760031311130740017}
 --- !u!114 &1077640377
 MonoBehaviour:
   m_ObjectHideFlags: 0
