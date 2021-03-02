@@ -2,12 +2,15 @@
 using UnityEngine;
 using Game.Data;
 using Events;
+using System.Collections;
 
 namespace Game.UI
 {
 
     public class PointOfInterestInterface : MonoBehaviour
     {
+
+        public RescueEventSO _thisTask;
 
         [SerializeField]
         private float _timeToReact = 10f;
@@ -16,22 +19,13 @@ namespace Game.UI
         private ScriptableTaskValue _task;
 
         [SerializeField]
+        private ScriptableEventListenerValue _startTaskEventValue;
+
+        [SerializeField]
         private ScriptableGameObjectValue _eventScreen;
 
         [SerializeField]
         private ScriptableGameObjectValue _cardsStack;
-
-        [SerializeField]
-        private Transform _taskPanel;
-
-        [SerializeField]
-        private RescueEventSO _thisTask;
-
-        [SerializeField]
-        private Text _description;
-
-        [SerializeField]
-        private Image _taskImage;
 
         [SerializeField]
         private Text _timeToReactText;
@@ -60,7 +54,7 @@ namespace Game.UI
 
         private void OnEnable()
         {
-            _thisTask = _task.value;
+            //_thisTask = _task.value;
             _updateEventListener.OnEventHappened += CounterMethod;
             _updateEventListener.OnEventHappened += StartThicking;
             _startTaskEventListener.OnEventHappened += CanThick;
@@ -79,24 +73,15 @@ namespace Game.UI
         private void OnMouseDown()
         {
             _startTaskEventListener.enabled = true;
-            EnableScreen();
+            _startTaskEventValue.value = _startTaskEventListener;
             _task.value = _thisTask;
-            InitializeEventScreen();
+            EnableScreen();
             Time.timeScale = 0f;
         }
 
         private void EnableScreen()
         {
             _eventScreen.value.SetActive(true);
-            _taskPanel = _eventScreen.value.transform.GetChild(0);
-        }
-
-        private void InitializeEventScreen()
-        {
-            _description = _taskPanel.GetChild(1).GetComponent<Text>();
-            _taskImage = _taskPanel.GetChild(2).GetComponent<Image>();
-            _description.text = _task.value.description;
-            _taskImage.sprite = _task.value.logo;
         }
 
         private void CanThick()
@@ -117,21 +102,10 @@ namespace Game.UI
                 {
                     transform.localScale = new Vector3(5f, 5f, 0f);
                     Debug.Log("Make a report");
-                    ReturnCards();
+                    //ReturnCards(); Вот тут сделать событие о завершении задания
                     _thisTask.ClearSO();
                     Destroy(gameObject);
                 }
-            }
-        }
-
-        private void ReturnCards()
-        {
-            for (int i = 0; i < _thisTask._operatives.Count; i++)
-            {
-                var slot = Instantiate(_slotPrefab, _cardsStack.value.transform);
-                var card = Instantiate(_cardPrefab, slot.transform);
-                card.GetComponent<Card>().ThisOperative = _thisTask._operatives[i];
-                Debug.Log(i);
             }
         }
 
@@ -149,6 +123,16 @@ namespace Game.UI
             else
             {
                 _timeToReactText.enabled = false;
+            }
+        }
+
+        private IEnumerator Thinning()
+        {
+            if(_canThick == true)
+            {
+                Debug.Log("Coroutine started");
+                yield return new WaitForSeconds(3f);
+                Debug.Log("Coroutine ended");
             }
         }
     }
