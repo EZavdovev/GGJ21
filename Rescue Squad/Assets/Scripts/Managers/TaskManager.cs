@@ -13,7 +13,22 @@ namespace Game.Managers
         private EventListener _setCardEventListener;
 
         [SerializeField]
+        private EventListener _taskEndedEventListener;
+
+        [SerializeField]
         private ScriptableTaskValue _currentTask;
+
+        [SerializeField]
+        private ScriptableTaskValue _endedTask;
+
+        [SerializeField]
+        private Transform _cardsStack;
+
+        [SerializeField]
+        private GameObject _slotPrefab;
+
+        [SerializeField]
+        private GameObject _cardPrefab;
 
         [SerializeField]
         private Transform _cardsPanel;
@@ -22,11 +37,13 @@ namespace Game.Managers
         private void OnEnable()
         {
             _setCardEventListener.OnEventHappened += LoadCards;
+            _taskEndedEventListener.OnEventHappened += ReturnCards;
         }
 
         private void OnDisable()
         {
             _setCardEventListener.OnEventHappened -= LoadCards;
+            _taskEndedEventListener.OnEventHappened -= ReturnCards;
         }
 
         private void LoadCards()
@@ -36,7 +53,6 @@ namespace Game.Managers
                 if (slot.transform.childCount > 0)
                 {
                     var card = slot.transform.GetChild(0);
-                    Debug.Log(card.GetComponent<Card>().ThisOperative.name);
                     if (card != null)
                     {
                         card.TryGetComponent<Card>(out var cardComp);
@@ -46,6 +62,17 @@ namespace Game.Managers
                         }
                     }
                 }
+            }
+        }
+
+        private void ReturnCards()
+        {
+            for (int i = 0; i < _endedTask.value._operatives.Count; i++)
+            {
+                var slot = Instantiate(_slotPrefab, _cardsStack);
+                var card = Instantiate(_cardPrefab, slot.transform);
+                card.GetComponent<Card>().ThisOperative = _endedTask.value._operatives[i];
+                Debug.Log(i);
             }
         }
     }
