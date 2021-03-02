@@ -548,6 +548,7 @@ GameObject:
   - component: {fileID: 7760031311111718982}
   - component: {fileID: 6579793265617751055}
   - component: {fileID: 1077640377}
+  - component: {fileID: 5639439295360638275}
   m_Layer: 5
   m_Name: EventsScreen
   m_TagString: Untagged
@@ -590,9 +591,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _task: {fileID: 11400000, guid: 44d44f32080d456429e92f91ba09a12b, type: 2}
+  _endedTask: {fileID: 11400000, guid: 8de73b9b70da2ac4f9f57d96d478b147, type: 2}
   _startTaskEventValue: {fileID: 11400000, guid: 6164ddde4c404ec47953326063d682b0,
     type: 2}
   _startTaskDispatcher: {fileID: 1077640377}
+  _taskEndedEventListener: {fileID: 5639439295360638275}
   _cardsMenu: {fileID: 4096906202081062895}
   _cardsStack: {fileID: 0}
   _slotPrefab: {fileID: 6200066400114838810, guid: b67beb2301d16f6479619802f15c720a,
@@ -614,6 +617,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _someEvent: {fileID: 11400000, guid: fa4b50302592a4d438277fe6085fd7af, type: 2}
+--- !u!114 &5639439295360638275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7760031311111718983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf9540aab820214caee057f3b95790d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _someEvent: {fileID: 11400000, guid: 7d2089ed963ed5f4e9a882ad56082d50, type: 2}
 --- !u!1 &7760031311130740023
 GameObject:
   m_ObjectHideFlags: 0
