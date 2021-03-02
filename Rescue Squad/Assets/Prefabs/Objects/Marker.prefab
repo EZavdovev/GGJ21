@@ -192,26 +192,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7634c12c9e1ff5c4e98fec5585c89daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _thisTask: {fileID: 0}
   _timeToReact: 10
   _task: {fileID: 11400000, guid: 44d44f32080d456429e92f91ba09a12b, type: 2}
+  _endedTask: {fileID: 11400000, guid: 8de73b9b70da2ac4f9f57d96d478b147, type: 2}
   _startTaskEventValue: {fileID: 11400000, guid: 6164ddde4c404ec47953326063d682b0,
     type: 2}
   _eventScreen: {fileID: 11400000, guid: 184f1e0a212e82a4cb1121e6ab4ef667, type: 2}
   _cardsStack: {fileID: 11400000, guid: 06c9d2437b581204f844b02f515b79b5, type: 2}
-  _taskPanel: {fileID: 0}
-  _thisTask: {fileID: 0}
-  _description: {fileID: 0}
-  _taskImage: {fileID: 0}
   _timeToReactText: {fileID: 3114585607596342701}
   _updateEventListener: {fileID: 448342531209968562}
   _startTaskEventListener: {fileID: 3557611141476574812}
+  _taskEndedDisptacher: {fileID: 5831311753804179998, guid: ee9c9f1887191a741b26544a3ca8e87b,
+    type: 3}
   _mustCount: 1
   _canThick: 0
   _cardPrefab: {fileID: 2254328248592856914, guid: 398d55521213f4443bb666aa70c1dc7c,
     type: 3}
   _slotPrefab: {fileID: 6200066400114838810, guid: b67beb2301d16f6479619802f15c720a,
     type: 3}
-  _scaleChanger: {x: 0.01, y: 0.01, z: 0}
+  _scaleChanger: {x: 1.6, y: 1.6, z: 0}
 --- !u!114 &448342531209968562
 MonoBehaviour:
   m_ObjectHideFlags: 0
