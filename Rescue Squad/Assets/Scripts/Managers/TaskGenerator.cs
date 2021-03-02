@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Game.Data;
 using Events;
+using Game.UI;
 
 namespace Game.Managers
 {
@@ -43,11 +44,14 @@ namespace Game.Managers
             //x(-12;12) y(-9;9)
             if(_tasks.Count != 0)
             {
-                _currentTask.value = GetRandomTask();
-                var spawn = _currentTask.value.coordinates;
+                //_currentTask.value = GetRandomTask();
+                var rescuePoint = GetRandomTask();
+                var spawn = rescuePoint.coordinates;
                 var spawnTask = Instantiate(_marker, spawn, Quaternion.identity);
-                spawnTask.transform.localScale = new Vector3(_currentTask.value.searchingRadius, _currentTask.value.searchingRadius, 0f);
-                _tasks.Remove(_currentTask.value);
+                spawnTask.transform.localScale = new Vector3(rescuePoint.searchingRadius, rescuePoint.searchingRadius, 0f);
+                spawnTask.TryGetComponent<PointOfInterestInterface>(out var pointScript);
+                pointScript._thisTask = rescuePoint;
+                _tasks.Remove(rescuePoint);
             }
             else 
             { 
