@@ -19,6 +19,9 @@ namespace Game.UI
         private ScriptableTaskValue _task;
 
         [SerializeField]
+        private ScriptableTaskValue _endedTask;
+
+        [SerializeField]
         private ScriptableEventListenerValue _startTaskEventValue;
 
         [SerializeField]
@@ -35,6 +38,9 @@ namespace Game.UI
 
         [SerializeField]
         private EventListener _startTaskEventListener;
+
+        [SerializeField]
+        private EventDispatcher _taskEndedDisptacher;
 
         [SerializeField]
         private bool _mustCount = true;
@@ -66,7 +72,6 @@ namespace Game.UI
             _updateEventListener.OnEventHappened -= StartThicking;
             _startTaskEventListener.OnEventHappened -= CanThick;
             _startTaskEventListener.enabled = false;
-            Time.timeScale = 1f;
         }
 
 
@@ -76,7 +81,6 @@ namespace Game.UI
             _startTaskEventValue.value = _startTaskEventListener;
             _task.value = _thisTask;
             EnableScreen();
-            Time.timeScale = 0f;
         }
 
         private void EnableScreen()
@@ -96,12 +100,13 @@ namespace Game.UI
                 _mustCount = false;
                 if (_mustCount == false)
                 {
-                    transform.localScale -= _scaleChanger * _thisTask.SpeedModifier();
+                    transform.localScale -= _scaleChanger * _thisTask.SpeedModifier() * Time.deltaTime;
                 }
                 if (transform.localScale.x <= 5f)
                 {
                     transform.localScale = new Vector3(5f, 5f, 0f);
-                    Debug.Log("Make a report");
+                    _endedTask.value = _task.value;
+                    _taskEndedDisptacher.Dispatch();
                     //ReturnCards(); Вот тут сделать событие о завершении задания
                     _thisTask.ClearSO();
                     Destroy(gameObject);
