@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1378404125680586777}
   - component: {fileID: 1378404125680586790}
   - component: {fileID: 1378404125680586791}
+  - component: {fileID: 5831311753804179998}
+  - component: {fileID: 977297426}
   m_Layer: 0
   m_Name: TaskManager
   m_TagString: Untagged
@@ -45,9 +47,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _setCardEventListener: {fileID: 1378404125680586791}
-  _operativesToTask:
-  - {fileID: 0}
+  _taskEndedEventListener: {fileID: 977297426}
   _currentTask: {fileID: 11400000, guid: 44d44f32080d456429e92f91ba09a12b, type: 2}
+  _endedTask: {fileID: 11400000, guid: 8de73b9b70da2ac4f9f57d96d478b147, type: 2}
+  _cardsStack: {fileID: 0}
+  _slotPrefab: {fileID: 6200066400114838810, guid: b67beb2301d16f6479619802f15c720a,
+    type: 3}
+  _cardPrefab: {fileID: 2254328248592856914, guid: 398d55521213f4443bb666aa70c1dc7c,
+    type: 3}
   _cardsPanel: {fileID: 0}
 --- !u!114 &1378404125680586791
 MonoBehaviour:
@@ -62,3 +69,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _someEvent: {fileID: 11400000, guid: ef2bc579bef7dd54cbc2a2762ba984fe, type: 2}
+--- !u!114 &5831311753804179998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378404125680586788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad642356f87d0a74da8a498ef57d3053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _someEvent: {fileID: 11400000, guid: 7d2089ed963ed5f4e9a882ad56082d50, type: 2}
+--- !u!114 &977297426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378404125680586788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf9540aab820214caee057f3b95790d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _someEvent: {fileID: 11400000, guid: 7d2089ed963ed5f4e9a882ad56082d50, type: 2}
