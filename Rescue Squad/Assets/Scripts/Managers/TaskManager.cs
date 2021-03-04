@@ -72,7 +72,6 @@ namespace Game.Managers
                 var slot = Instantiate(_slotPrefab, _cardsStack);
                 var card = Instantiate(_cardPrefab, slot.transform);
                 card.GetComponent<Card>().ThisOperative = _endedTask.value._operatives[i];
-                Debug.Log(i);
             }
         }
     }
