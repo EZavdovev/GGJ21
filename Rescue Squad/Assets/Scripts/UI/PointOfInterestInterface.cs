@@ -2,7 +2,6 @@
 using UnityEngine;
 using Game.Data;
 using Events;
-using System.Collections;
 
 namespace Game.UI
 {
@@ -49,6 +48,9 @@ namespace Game.UI
         private bool _canThick = false;
 
         [SerializeField]
+        private bool _dispatched = false;
+
+        [SerializeField]
         private GameObject _cardPrefab;
 
         [SerializeField]
@@ -60,18 +62,26 @@ namespace Game.UI
 
         private void OnEnable()
         {
-            //_thisTask = _task.value;
-            _updateEventListener.OnEventHappened += CounterMethod;
-            _updateEventListener.OnEventHappened += StartThicking;
-            _startTaskEventListener.OnEventHappened += CanThick;
+            SubscribeToEvents();
         }
 
         private void OnDisable()
         {
+            UnSubscribeToEvents();
+            _startTaskEventListener.enabled = false;
+        }
+
+        private void SubscribeToEvents()
+        {
+            _updateEventListener.OnEventHappened += CounterMethod;
+            _updateEventListener.OnEventHappened += StartThicking;
+            _startTaskEventListener.OnEventHappened += CanThick;
+        }
+        private void UnSubscribeToEvents()
+        {
             _updateEventListener.OnEventHappened -= CounterMethod;
             _updateEventListener.OnEventHappened -= StartThicking;
             _startTaskEventListener.OnEventHappened -= CanThick;
-            _startTaskEventListener.enabled = false;
         }
 
 
@@ -100,15 +110,26 @@ namespace Game.UI
                 _mustCount = false;
                 if (_mustCount == false)
                 {
+                    Debug.Log($"Object {gameObject.name} started task");
                     transform.localScale -= _scaleChanger * _thisTask.SpeedModifier() * Time.deltaTime;
+                    if(_endedTask.value != null)
+                    {
+                        Debug.Log("Task setted: " + _endedTask.value.taskName);
+                    }
                 }
                 if (transform.localScale.x <= 5f)
                 {
                     transform.localScale = new Vector3(5f, 5f, 0f);
                     _endedTask.value = _task.value;
-                    _taskEndedDisptacher.Dispatch();
-                    //ReturnCards(); Вот тут сделать событие о завершении задания
+                    if(_dispatched == false)
+                    {
+                        _taskEndedDisptacher.Dispatch();
+                        _dispatched = true;
+                        Debug.Log("Dispatched with task :" + _thisTask.taskName);
+                    }
+                    Debug.Log(_endedTask.value.taskName);
                     _thisTask.ClearSO();
+                    UnSubscribeToEvents();
                     Destroy(gameObject);
                 }
             }
@@ -128,16 +149,6 @@ namespace Game.UI
             else
             {
                 _timeToReactText.enabled = false;
-            }
-        }
-
-        private IEnumerator Thinning()
-        {
-            if(_canThick == true)
-            {
-                Debug.Log("Coroutine started");
-                yield return new WaitForSeconds(3f);
-                Debug.Log("Coroutine ended");
             }
         }
     }
