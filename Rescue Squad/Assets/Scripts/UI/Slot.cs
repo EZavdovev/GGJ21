@@ -16,8 +16,16 @@ namespace Game.UI
         [SerializeField]
         private ScriptableGameObjectValue _itemBeingDragged;
 
-        [SerializeField]
-        private bool _isBusy = false;
+        private GameObject _item;
+
+        private void OnEnable()
+        {
+            if (transform.childCount == 0)
+            {
+                return;
+            }
+            _item = transform.GetChild(0).gameObject;
+        }
 
         public GameObject Item
         {
@@ -25,9 +33,16 @@ namespace Game.UI
             {
                 if (transform.childCount > 0)
                 {
-                    return transform.GetChild(0).gameObject;
+                    return _item;
                 }
                 return null;
+            }
+            set 
+            { 
+                if(transform.childCount == 0)
+                {
+                    _item = value;
+                }
             }
         }
 
@@ -36,16 +51,19 @@ namespace Game.UI
             if (!Item)
             {
                 _itemBeingDragged.value.transform.SetParent(transform);
-                Debug.Log("Card set");
-                _isBusy = true;
+                _item = _itemBeingDragged.value.gameObject;
                 if(_setCardDispatcher.value != null)
                 {
                     _setCardDispatcher.value.Dispatch();
                 }
             }
-            else
+        }
+
+        public void CheckItem()
+        {
+            if(transform.childCount == 0)
             {
-                _isBusy = false;
+                Item = null;
             }
         }
     }
