@@ -41,7 +41,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -68.4, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2254328248592856913
@@ -164,6 +164,7 @@ MonoBehaviour:
   _objectToDrag: {fileID: 11400000, guid: 6020fe5932b37644c84ffeac88916d62, type: 2}
   _canvasGroup: {fileID: 3547268183548376003}
   _startParent: {fileID: 0}
+  _parentWhileDrag: {fileID: 0}
 --- !u!1 &3973326752499442741
 GameObject:
   m_ObjectHideFlags: 0
