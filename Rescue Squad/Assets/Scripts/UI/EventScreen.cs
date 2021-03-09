@@ -22,9 +22,6 @@ namespace Game.UI
         private Transform _cardsMenu;
 
         [SerializeField]
-        private Transform _cardsStack;
-
-        [SerializeField]
         private GameObject _slotPrefab;
 
         [SerializeField]
@@ -71,6 +68,8 @@ namespace Game.UI
                 Destroy(slot.gameObject);
             }
         }
+
+        
 
         public void ClosePanel()
         {
