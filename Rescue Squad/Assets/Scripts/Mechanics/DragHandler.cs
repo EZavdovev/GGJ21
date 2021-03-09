@@ -32,12 +32,13 @@ namespace Game.Mechanics
         public void OnDrag(PointerEventData eventData)
         {
             transform.position = Input.mousePosition;
+            transform.SetParent(_startParent.parent);
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
             _objectToDrag.value = null;
-            if (transform.parent == _startParent || transform.parent == transform.root)
+            if (transform.parent == _startParent || transform.parent == _startParent.parent)
             {
                 transform.position = _startPos;
                 transform.SetParent(_startParent);
